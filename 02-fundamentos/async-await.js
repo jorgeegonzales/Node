@@ -68,8 +68,12 @@ const getInfoUsuario = async () => {
 
 const id = 3;
 getInfoUsuario()
-    .then (msg => console.log(msg))
-    .catch( err => console.log( err ));
+    .then ( msg => {
+        console.log('Todo Bien')
+        console.log(msg)})
+    .catch( err => {
+        console.log( 'Todo Mal')
+        console.log( err )});
 
 
 
