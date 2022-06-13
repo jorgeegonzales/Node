@@ -50,7 +50,7 @@ const getSalario = (id,callback) => {
 
 }
 
-const id = 5;
+const id = 3;
 getEmpleado(id, (err,empleado) => {
 
     if(err){
@@ -60,16 +60,18 @@ getEmpleado(id, (err,empleado) => {
 
     console.log('Empleado Existe');
     console.log(empleado.nombre);
+
+    getSalario(id,(err,salario) => {
+
+        if(err){
+            console.log('ERROR');
+            return console.log(err);
+        }
+    
+        console.log('Salario Existe');
+        console.log(salario);
+    
+    })
+    
 })
 
-getSalario(id,(err,salario) => {
-
-    if(err){
-        console.log('ERROR');
-        return console.log(err);
-    }
-
-    console.log('Salario Existe');
-    console.log(salario);
-
-})
