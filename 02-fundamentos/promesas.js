@@ -42,6 +42,7 @@ const getSalario = ( id ) => {
 
     return new Promise((resolve,reject) => {
         const salario = salarios.find((S) => S.id === id)?.sueldo;
+        
         (salario)
             ? resolve( salario)
             : reject(`No existe salario para id ${ id }`);
@@ -49,13 +50,24 @@ const getSalario = ( id ) => {
     };
    
 
-const id = 1;
-getEmpleado(id)
+const id = 3;
+/*getEmpleado(id)
     .then( empleado => console.log( empleado ))
     .catch (error => console.log(error));
 
 getSalario(id)
     .then( salario => console.log(salario ))
     .catch (error => console.log(error));
+*/
 
-   
+getEmpleado(id)
+    .then( empleado => {
+        getSalario(id) 
+        .then (salario => {
+            console.log('el empleado: ',empleado,'tiene un salario de : ',salario);
+        })
+        .catch(err => console.log(err))
+    })
+    .catch(err => console.log(err))
+    
+    
