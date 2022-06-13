@@ -26,33 +26,28 @@ const salarios = [
 
 const getEmpleado = ( id ) => {
 
-   const promesa = new Promise( (resolve,reject) => {
+    return new Promise( (resolve,reject) => {
 
         const empleado = empleados.find((e) => e.id === id)?.nombre;
 
-        if ( empleado){
-            resolve( empleado);
-        } else {
-            reject( `No existe empleado con id ${ id }`);
-        }
-   });
+        ( empleado)
+           ? resolve( empleado)
+           : reject( `No existe empleado con id ${ id }`);
+        });
+   };
 
-   return promesa;
-
-}
+    
 
 const getSalario = ( id ) => {
 
-    const promesa = new Promise((resolve,reject) => {
+    return new Promise((resolve,reject) => {
         const salario = salarios.find((S) => S.id === id)?.sueldo;
-        if (salario){
-            resolve( salario);
-        } else {
-            reject(`No existe salario para id ${ id }`);
-        }
-    });
-    return promesa;
-}
+        (salario)
+            ? resolve( salario)
+            : reject(`No existe salario para id ${ id }`);
+        });
+    };
+   
 
 const id = 1;
 getEmpleado(id)
