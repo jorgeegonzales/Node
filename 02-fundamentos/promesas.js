@@ -59,7 +59,7 @@ getSalario(id)
     .then( salario => console.log(salario ))
     .catch (error => console.log(error));
 */
-
+/*
 getEmpleado(id)
     .then( empleado => {
         getSalario(id) 
@@ -69,5 +69,14 @@ getEmpleado(id)
         .catch(err => console.log(err))
     })
     .catch(err => console.log(err))
-    
-    
+*/
+
+let nombre;
+
+getEmpleado(id)
+.then (empleado => {
+    nombre = empleado;
+    return getSalario(id)
+})
+.then( salario => console.log( 'el empleado: ',nombre,'tiene un salario de: ',salario) )
+.catch( err => console.log(err));
