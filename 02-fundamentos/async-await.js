@@ -58,15 +58,12 @@ const getInfoUsuario = async () => {
 
    } catch (error) {
 
-    return error ;
+    throw error ;
     
    }
-   
-   
-    
 }
 
-const id = 3;
+const id = 1;
 getInfoUsuario()
     .then ( msg => {
         console.log('Todo Bien')
