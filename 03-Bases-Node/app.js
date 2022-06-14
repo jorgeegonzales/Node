@@ -1,11 +1,11 @@
 const fs = require ('fs');
-
+const base = 3;
 console.clear();
 console.log('=========================')
-console.log('Tabla del: 5')
+console.log(`Tabla del: ${base}`)
 console.log('=========================')
 
-const base = 3;
+
 let salida = '';
 
 for (let i= 1; i < 11 ; i++) {
